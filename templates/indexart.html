@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Articles</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+    :root {
+            --light-green: #d4f1c4;
+            --medium-green: #9acd32;
+            --dark-green: #008000;
+            --accent-green: #32cd32;
+            --hover-green: #228b22;
+        }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: url(/templates/images/5.jpg) no-repeat center center/cover;
+      color: #333;
+      animation: fadeIn 1s ease-out;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background:var(--light-green);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+      padding: 15px 20px;
+      animation: slideIn 1s ease-out;
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #149600;
+      animation: bounce 2s infinite;
+    }
+
+    header .navbar a {
+      font-size: 1.4rem;
+      margin-left: 20px;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    header .navbar a:hover {
+      color: #149600;
+    }
+
+    #menu-bar {
+      font-size: 2rem;
+      cursor: pointer;
+      color: #3e3e3e;
+      display: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h1 {
+      font-size: 28px;
+      text-align: center;
+      color: #149600;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .articles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .article-card {
+      background: #f9fffc;
+      border: 1px solid #d5dbd9;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1 1 calc(30% - 20px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .article-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-card h2 {
+      font-size: 20px;
+      color: #149600;
+      margin-bottom: 10px;
+    }
+
+    .article-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .article-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #149600;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .article-card a:hover {
+      color: #12d700;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, var(--medium-green), var(--dark-green));
+      padding: 2rem 9%;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+      height: 95px;
+  }
+
+  header .logo {
+      font-size: 2.5rem;
+      font-weight: bolder;
+      color: white;
+      animation: logo-bounce 0.9s infinite;
+  }
+
+    header .navbar a {
+      font-size: 1.8rem;
+      margin-left: 2rem;
+      color: white;
+  }
+
+  header .navbar a:hover {
+      color: var(--accent-green);
+      font-weight: bold;
+  }
+
+  #menu-bar {
+      font-size: 3rem;
+      cursor: pointer;
+      color: white;
+      border: 0.1rem solid white;
+      border-radius: 0.3rem;
+      padding: 0.5rem 1.5rem;
+      display: none;
+  }
+
+    @media (max-width: 768px) {
+      #menu-bar {
+          display: block;
+      }
+
+      header .navbar {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--light-green);
+          flex-direction: column;
+          align-items: center;
+          display: none;
+      }
+
+      header .navbar.active {
+          display: flex;
+      }
+
+      header .navbar a {
+          margin: 1rem 0;
+          color: var(--dark-green);
+      }
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo"><i class="fas fa-seedling"></i> pred</a>
+    <div id="menu-bar" class="fas fa-bars"></div>
+    <nav class="navbar">
+        <a href="{{ url_for('homee') }}">Home</a>
+        <a href="{{ url_for('detail') }}">Details</a>
+        <a href="{{ url_for('model') }}">Model</a>
+        <a href="{{ url_for('article') }}">Article</a>
+    </nav>
+</header>
+
+  <div class="container">
+    <h1>Educational Articles</h1>
+    <div class="articles">
+      <div class="article-card">
+        <h2>How to Improve Soil Fertility Naturally</h2>
+        <p>Explore natural methods to enhance soil fertility using compost, crop rotation, and organic fertilizers.</p>
+        <a href="{{ url_for('article_detail', article_id=1) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Understanding NPK: A Guide to Soil Nutrients</h2>
+        <p>Learn the importance of Nitrogen, Phosphorus, and Potassium in soil health and plant growth.</p>
+        <a href="{{ url_for('article_detail', article_id=2) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Tips for Sustainable Fertilizer Use</h2>
+        <p>Discover best practices for minimizing fertilizer waste and protecting the environment.</p>
+        <a href="{{ url_for('article_detail', article_id=3) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>The Role of Organic Matter in Soil Health</h2>
+        <p>Find out how organic matter can improve soil structure and fertility naturally.</p>
+        <a href="{{ url_for('article_detail', article_id=4) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Compost: Nature's Fertilizer</h2>
+        <p>Understand the benefits of composting for sustainable farming practices.</p>
+        <a href="{{ url_for('article_detail', article_id=5) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Microbial Life and Soil Quality</h2>
+        <p>Delve into the relationship between microbial life and productive soils.</p>
+        <a href="{{ url_for('article_detail', article_id=6) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Water Conservation Techniques in Agriculture</h2>
+        <p>Learn how to conserve water while maintaining soil moisture and health.</p>
+        <a href="{{ url_for('article_detail', article_id=7) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Balancing Soil pH for Better Yields</h2>
+        <p>Discover the importance of maintaining optimal soil pH levels for crop growth.</p>
+        <a href="{{ url_for('article_detail', article_id=8) }}" class="read-more">Read More</a>
+      </div>
+      <div class="article-card">
+        <h2>Climate Change and Its Impact on Soil</h2>
+        <p>Understand how climate change affects soil properties and agricultural productivity.</p>
+        <a href="{{ url_for('article_detail', article_id=9) }}" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

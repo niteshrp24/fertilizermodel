@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article</title>
+  <style>
+    :root {
+            --light-green: #d4f1c4;
+            --medium-green: #9acd32;
+            --dark-green: #008000;
+            --accent-green: #32cd32;
+            --hover-green: #228b22;
+        }
+    body {
+      font-family: Arial, sans-serif;
+      background:  var(--accent-green);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #d4f1c4;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #149600;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #149600;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: #12d700;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="container">
+    <!-- Check if article exists -->
+    {% if article %}
+      <h1>{{ article.title }}</h1>
+      <p>{{ article.content }}</p>
+    {% else %}
+      <h1>Article Not Found</h1>
+      <p>The article you are looking for does not exist or has been removed.</p>
+    {% endif %}
+
+    <!-- Link back to the list of articles -->
+    <a href="{{ url_for('article') }}" class="back-link">← Back to Articles</a>
+  </div>
+
+  
+</body>
+</html>
